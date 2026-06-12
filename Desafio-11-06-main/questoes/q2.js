@@ -1,16 +1,13 @@
 function mostrarResposta(){
+    
+    let codigo =
+    document.getElementById("codigo").value;
 
-    let largura = 5;
-    let altura = 3;
-
-    let area = largura * altura;
-    let tinta = area / 2;
-
-    document.getElementById("resultado").innerHTML = `
-        <p>Largura: ${largura}m</p>
-        <p>Altura: ${altura}m</p>
-        <br>
-        <p>Área: ${area}m²</p>
-        <strong>Tinta necessária: ${tinta} litros</strong>
-    `;
+    let senha =
+    document.getElementById("senha").value;
+    if(codigo === "ABCD1234" && senha === "1234"){
+        document.getElementById("resultado").innerHTML = "ACESSO PERMITIDO"
+    } else {
+        document.getElementById("resultado").innerHTML = "ACESSO NEGADO"
+    }
 }
