@@ -1,18 +1,40 @@
 function mostrarResposta(){
+    let produto = document.getElementById("produto").value;
 
-    let distancia = 500;
-    let consumo = 10;
-    let preco = 6.50;
+    let valorCompra = Number(
+        document.getElementById("valorCompra").value
+    );
 
-    let litros = distancia / consumo;
-    let valor = litros * preco;
+    let valorVenda;
+
+    if(valorCompra < 10){
+
+        valorVenda = valorCompra * 1.70;
+
+    }
+    else if(valorCompra <= 30){
+
+        valorVenda = valorCompra * 1.50;
+    }
+    else if(valorCompra <= 50){    
+
+        valorVenda = valorCompra * 1.40;
+    }
+    else{
+
+        valorVenda = valorCompra *1.30;
+
+    }    
 
     document.getElementById("resultado").innerHTML = `
-        <p>Distância: ${distancia} km</p>
-        <p>Consumo: ${consumo} km/l</p>
-        <p>Preço do combustível: R$ ${preco}</p>
-        <br>
-        <p>Combustível necessário: ${litros} litros</p>
-        <strong>Valor total: R$ ${valor.toFixed(2)}</strong>
-    `;
+    <h3>Resultado</h3>
+
+    <p><strong>Produto:</strong> ${produto}</p>
+
+    <p><strong>Valor da Compra:</strong>
+    R$ ${valorCompra.toFixed(2)}</p>
+
+    <p><strong>Valor da Venda:</strong>
+    R$ ${valorVenda.toFixed(2)}</p>
+`;
 }
